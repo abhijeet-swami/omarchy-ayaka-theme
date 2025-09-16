@@ -1,0 +1,169 @@
+@define-color selected-text #66cc66;
+@define-color text #e6e6e6;
+@define-color base #0d0d0d;
+@define-color border #e65c5c;
+@define-color foreground #f2f2f2;
+@define-color background #000000;
+@define-color hover #2a2a2a;
+@define-color accent #6699ff;
+
+#window {
+  background: transparent;
+  border-radius: 10px;
+}
+
+#window > #box,
+#box {
+  background: alpha(@background, 0.5);
+  color: @text;
+  border: 2px solid @border;
+  border-radius: 10px;
+  padding: 8px;
+  margin: 0px;
+  box-shadow: none;
+  -gtk-outline-radius: 0;
+}
+
+#search,
+.search,
+#tray #search,
+#tray .search {
+  background: alpha(@hover, 0.3);
+  color: @foreground;
+  border: 1px solid alpha(@border, 0.5);
+  border-radius: 10px;
+  padding: 8px 12px;
+  margin: 4px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+#search:focus,
+.search:focus,
+#tray #search:focus,
+#tray .search:focus {
+  border-color: @accent;
+  box-shadow: none;
+  outline: none;
+}
+
+#bar,
+.bar {
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  padding: 0;
+}
+
+#scroll,
+.scroll {
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  padding: 4px 0;
+}
+
+#list,
+.list {
+  background: transparent;
+  border: none;
+  border-radius: 0;
+}
+
+#item,
+.item {
+  background: transparent;
+  color: @text;
+  border: none;
+  border-radius: 0;
+  padding: 1px 10px;
+  margin: 1px 0;
+  transition: none;
+}
+
+#item:hover,
+.item:hover {
+  background: alpha(@hover, 0.4);
+  color: @foreground;
+  transform: none;
+  border-radius: 10px;
+}
+
+#item:selected,
+.item:selected,
+#item:focus,
+.item:focus,
+#item:checked,
+.item:checked {
+  background: @accent;
+  color: @white;
+  font-weight: 600;
+  transform: none;
+  box-shadow: none;
+  border-radius: 10px;
+}
+
+#item:active,
+.item:active {
+  background: @border;
+  color: @background;
+  transform: none;
+}
+
+#item .title {
+  color: @foreground;
+  font-weight: 500;
+  font-size: 13px;
+}
+
+#item:selected .title,
+.item:selected .title,
+#item:focus .title,
+.item:focus .title,
+#item:checked .title,
+.item:checked .title {
+  color: @white;
+  font-weight: 600;
+}
+
+#item .subtitle {
+  color: alpha(@text, 0.7);
+  font-size: 11px;
+  font-weight: normal;
+}
+
+#item:selected .subtitle,
+.item:selected .subtitle,
+#item:focus .subtitle,
+.item:focus .subtitle,
+#item:checked .subtitle,
+.item:checked .subtitle {
+  color: alpha(@white, 0.8);
+}
+
+#item .icon {
+  margin-right: 12px;
+  -gtk-icon-size: 20px;
+}
+
+scrollbar {
+  background: transparent;
+  border: none;
+  width: 6px;
+}
+
+scrollbar slider {
+  background: alpha(@accent, 0.6);
+  border-radius: 0;
+  border: none;
+  min-height: 20px;
+}
+
+scrollbar slider:hover {
+  background: @accent;
+}
+
+scrollbar trough {
+  background: transparent;
+  border-radius: 0;
+}
