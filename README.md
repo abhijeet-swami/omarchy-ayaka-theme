@@ -3,5 +3,5 @@ With a subtle glass-like blur that melts into the background, Ayaka highlights y
 
 ## Screenshots
 
-![Ayaka 1](https://github.com/abhijeet-swami/omarchy-ayaka-theme/screenshots/1.png)
-![Ayaka 2](https://github.com/abhijeet-swami/omarchy-ayaka-theme/screenshots/1.png)
+![Ayaka 1](https://github.com/abhijeet-swami/omarchy-ayaka-theme/blob/main/screenshots/1.png)
+![Ayaka 2](https://github.com/abhijeet-swami/omarchy-ayaka-theme/blob/main/screenshots/2.png)
