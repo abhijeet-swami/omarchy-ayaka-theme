@@ -1,4 +1,5 @@
-@define-color background rgba(38,38,38,0.3);
+@define-color background rgba(0, 0, 0, 0);
+@define-color waybarBg rgba(38,38,38,0.3);
 @define-color foreground      #e6e6e6;
 @define-color surface         #404040;
 @define-color inactive        #404040;
@@ -7,6 +8,10 @@
 @define-color accent_green    #9ece6a;
 @define-color accent_blue     #7aa2f7;
 @define-color accent_critical #e65c5c;
+
+#waybar {
+  background-color: @waybarBg;
+}
 
 #battery.charging,
 #battery.plugged {
