@@ -23,7 +23,7 @@
 }
 
 #battery.critical:not(.charging) {
-  color: @background;
+  color: @accent_critical;
 }
 
 #pulseaudio.muted {
