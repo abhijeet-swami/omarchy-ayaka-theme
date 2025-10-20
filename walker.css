@@ -7,163 +7,95 @@
 @define-color hover #2a2a2a;
 @define-color accent #6699ff;
 
-#window {
+window {
   background: transparent;
-  border-radius: 10px;
+  border-radius: 10px; 
 }
 
-#window > #box,
-#box {
+window .box-wrapper {
   background: alpha(@background, 0.5);
   color: @text;
   border: 2px solid @border;
   border-radius: 10px;
   padding: 8px;
-  margin: 0px;
-  box-shadow: none;
-  -gtk-outline-radius: 0;
+  margin: 0; 
 }
 
-#search,
-.search,
-#tray #search,
-#tray .search {
+window .search-container,
+window .search {
   background: alpha(@hover, 0.3);
   color: @foreground;
   border: 1px solid alpha(@border, 0.5);
   border-radius: 10px;
   padding: 8px 12px;
-  margin: 4px;
+  margin: 4px 0;
   font-size: 14px;
   font-weight: 500;
 }
 
-#search:focus,
-.search:focus,
-#tray #search:focus,
-#tray .search:focus {
-  border-color: @accent;
-  box-shadow: none;
+window .search:focus {
+  border-color: @border;
   outline: none;
 }
 
-#bar,
-.bar {
+window .bar,
+window .scroll,
+window .list {
   background: transparent;
   border: none;
   border-radius: 0;
   padding: 0;
 }
 
-#scroll,
-.scroll {
-  background: transparent;
-  border: none;
-  border-radius: 0;
-  padding: 4px 0;
-}
-
-#list,
-.list {
-  background: transparent;
-  border: none;
-  border-radius: 0;
-}
-
-#item,
-.item {
+window child {
   background: transparent;
   color: @text;
   border: none;
-  border-radius: 0;
-  padding: 1px 10px;
-  margin: 1px 0;
-  transition: none;
+  border-radius: 10px; 
+  padding: 4px 10px; 
+  transition: all 0.2s ease;
 }
 
-#item:hover,
-.item:hover {
-  background: alpha(@hover, 0.4);
-  color: @foreground;
-  transform: none;
-  border-radius: 10px;
-}
-
-#item:selected,
-.item:selected,
-#item:focus,
-.item:focus,
-#item:checked,
-.item:checked {
-  background: @accent;
-  color: @white;
+window child:selected,
+window child:focus,
+window child:checked {
+background: alpha(@hover, 0.2);
+  color: @selected-text;
   font-weight: 600;
-  transform: none;
-  box-shadow: none;
-  border-radius: 10px;
+  transform: translateX(2px);
 }
 
-#item:active,
-.item:active {
+window child:active {
   background: @border;
   color: @background;
-  transform: none;
+  transform: scale(0.98);
 }
 
-#item .title {
+window .item-box .title {
   color: @foreground;
   font-weight: 500;
   font-size: 13px;
 }
 
-#item:selected .title,
-.item:selected .title,
-#item:focus .title,
-.item:focus .title,
-#item:checked .title,
-.item:checked .title {
-  color: @white;
+window child:selected .title,
+window child:focus .title,
+window child:checked .title {
+  color: @selected-text;
   font-weight: 600;
 }
 
-#item .subtitle {
+window .item-box .subtitle {
   color: alpha(@text, 0.7);
   font-size: 11px;
-  font-weight: normal;
 }
 
-#item:selected .subtitle,
-.item:selected .subtitle,
-#item:focus .subtitle,
-.item:focus .subtitle,
-#item:checked .subtitle,
-.item:checked .subtitle {
-  color: alpha(@white, 0.8);
+window child:selected .subtitle,
+window child:focus .subtitle,
+window child:checked .subtitle {
+  color: alpha(@selected-text, 0.8);
 }
 
-#item .icon {
+window .item-box .icon {
   margin-right: 12px;
   -gtk-icon-size: 20px;
-}
-
-scrollbar {
-  background: transparent;
-  border: none;
-  width: 6px;
-}
-
-scrollbar slider {
-  background: alpha(@accent, 0.6);
-  border-radius: 0;
-  border: none;
-  min-height: 20px;
-}
-
-scrollbar slider:hover {
-  background: @accent;
-}
-
-scrollbar trough {
-  background: transparent;
-  border-radius: 0;
 }
