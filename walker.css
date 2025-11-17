@@ -9,7 +9,7 @@
 
 window {
   background: transparent;
-  border-radius: 10px; 
+  border-radius: 10px;
 }
 
 window .box-wrapper {
@@ -18,7 +18,7 @@ window .box-wrapper {
   border: 2px solid @border;
   border-radius: 10px;
   padding: 8px;
-  margin: 0; 
+  margin: 0;
 }
 
 window .search-container,
@@ -51,30 +51,41 @@ window child {
   background: transparent;
   color: @text;
   border: none;
-  border-radius: 10px; 
-  padding: 4px 10px; 
-  transition: all 0.2s ease;
+  border-radius: 10px;
+  padding: 8px 10px;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  height: 44px;
+  box-sizing: border-box;
+  transition: transform 180ms cubic-bezier(0.23,1,0.32,1), color 180ms ease, background-color 180ms ease;
+  will-change: transform, opacity;
 }
 
 window child:selected,
 window child:focus,
 window child:checked {
-background: alpha(@hover, 0.2);
+  background: alpha(@hover, 0.2);
   color: @selected-text;
   font-weight: 600;
-  transform: translateX(2px);
+  transform: translateX(2px) scale(1.02);
 }
 
 window child:active {
   background: @border;
   color: @background;
-  transform: scale(0.98);
+  transform: translateX(0) scale(0.995);
 }
 
 window .item-box .title {
   color: @foreground;
   font-weight: 500;
   font-size: 13px;
+  line-height: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 window child:selected .title,
@@ -87,6 +98,10 @@ window child:checked .title {
 window .item-box .subtitle {
   color: alpha(@text, 0.7);
   font-size: 11px;
+  line-height: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 window child:selected .subtitle,
@@ -96,6 +111,10 @@ window child:checked .subtitle {
 }
 
 window .item-box .icon {
-  margin-right: 12px;
+  margin-right: 0;
   -gtk-icon-size: 20px;
+  flex: 0 0 20px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
